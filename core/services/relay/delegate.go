@@ -7,7 +7,8 @@ import (
 
 	solanaGo "github.com/gagliardetto/solana-go"
 	"github.com/smartcontractkit/chainlink-solana/pkg/solana"
-	"github.com/smartcontractkit/chainlink-terra/pkg/terra"
+
+	// "github.com/smartcontractkit/chainlink-terra/pkg/terra"
 	evmCh "github.com/smartcontractkit/chainlink/core/chains/evm"
 	"github.com/smartcontractkit/chainlink/core/logger"
 	"github.com/smartcontractkit/chainlink/core/services/keystore"
