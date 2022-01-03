@@ -65,3 +65,28 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Run prettier check
         run: yarn prettier:check
+  golangci:
+    name: Go Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v2
+        with:
+          # Optional: version of golangci-lint to use in form of v1.2 or v1.2.3 or `latest` to use the latest version
+          version: latest
+
+          # Optional: golangci-lint command line arguments.
+          args: --skip-dirs=core/internal/gethwrappers --skip-dirs=core/internal/gethwrappers2 --skip-dirs=core/internal/mocks --timeout=5m0s
+
+          # Optional: show only new issues if it's a pull request. The default value is `false`.
+          only-new-issues: true
+
+          # Optional: if set to true then the action will use pre-installed Go.
+          # skip-go-installation: true
+
+          # Optional: if set to true then the action don't cache or restore ~/go/pkg.
+          # skip-pkg-cache: true
+
+          # Optional: if set to true then the action don't cache or restore ~/.cache/go-build.
+          # skip-build-cache: true

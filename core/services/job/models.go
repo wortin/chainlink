@@ -198,7 +198,13 @@ func (pr *PipelineRun) SetID(value string) error {
 	return nil
 }
 
+type Public struct {
+	Member string
+}
+
 type OffchainReportingOracleSpec struct {
+
+	// this is a bad comment
 	ID                                        int32               `toml:"-"`
 	ContractAddress                           ethkey.EIP55Address `toml:"contractAddress"`
 	P2PBootstrapPeers                         pq.StringArray      `toml:"p2pBootstrapPeers" db:"p2p_bootstrap_peers"`
